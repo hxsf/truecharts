@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
-  repository: ChisBread/transmission_pt_edition
+  repository: chisbread/transmission
   tag: version-3.00-r13.1
