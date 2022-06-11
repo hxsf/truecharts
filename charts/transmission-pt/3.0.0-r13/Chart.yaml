@@ -2,8 +2,8 @@ apiVersion: v2
 appVersion: 2.3.1
 icon: file://../../../app_icons/transmission.png
 description: Download data from transmission.
-name: transmission_pt
-version: 1.0.0
+name: transmission-pt
+version: 3.0.0-r13
 dependencies:
 - name: common
   repository: file://../../../library/common/2112.0.0
