@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: 2.3.1
 icon: https://truecharts.org/_static/img/appicons/qbittorrent.png
 description: Download data from qbittorent.
-name: qbittorent pt edition
+name: qbittorent_pt
 version: 1.0.1
 dependencies:
 - name: common
