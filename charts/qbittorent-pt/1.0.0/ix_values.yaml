@@ -1,4 +1,0 @@
-image:
-  pullPolicy: IfNotPresent
-  repository: chisbread/qbittorrent
-  tag: v4.3.9
