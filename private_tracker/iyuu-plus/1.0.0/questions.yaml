@@ -91,7 +91,7 @@ questions:
                   type: path
                   hidden: true
                   editable: true
-                  default: "/app_data"
+                  default: "/IYUU/db"
               - variable: hostPathEnabled
                 label: "Enable Custom Host Path for IYUU-plus Configuration Volume"
                 schema:
@@ -101,6 +101,41 @@ questions:
                   subquestions:
                     - variable: hostPath
                       label: "Host Path for IYUU-plus Configuration Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+        - variable: runtime
+          label: "Runtime data Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Configuration Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-iyuu_runtime"
+                  editable: false
+              - variable: mountPath
+                label: "Configuration Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/IYUU/runtime"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for IYUU-plus Runtime Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for IYUU-plus Runtime Volume"
                       schema:
                         type: hostpath
                         required: true
