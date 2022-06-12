@@ -24,7 +24,7 @@ questions:
     group: Networking
     schema:
       type: int
-      min: 8000
+      min: 9000
       max: 65535
       default: 20909
       required: true
@@ -33,7 +33,7 @@ questions:
     group: Networking
     schema:
       type: int
-      min: 8000
+      min: 9000
       max: 65535
       default: 20988
       required: true
@@ -42,7 +42,7 @@ questions:
     group: Networking
     schema:
       type: int
-      min: 8000
+      min: 9000
       max: 65535
       default: 20989
       required: true

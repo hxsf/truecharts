@@ -22,7 +22,7 @@ questions:
     group: Networking
     schema:
       type: int
-      min: 5000
+      min: 9000
       max: 65535
       default: 8787
       required: true
@@ -34,6 +34,13 @@ questions:
       type: string
       $ref:
         - "definitions/timezone"
+  - variable: iyuu_repo
+    label: "Custom upstream"
+    group: "Configuration"
+    schema:
+      type: string
+      default: "https://github.com/ledccn/IYUUPlus.git"
+      required: true
 
   - variable: environmentVariables
     label: "IYUU-plus environment"
