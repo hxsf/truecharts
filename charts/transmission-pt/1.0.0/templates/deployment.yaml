@@ -49,7 +49,7 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "TZ" "value" (printf "%s" .Values.timezone)) }}
-            {{ $envList = mustAppend $envList (dict "name" "WEBUI_PORT" "value" (printf "%d" (.Values.web_port | int))) }}
+            {{ $envList = mustAppend $envList (dict "name" "RPCPORT" "value" (printf "%d" (.Values.web_port | int))) }}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}
