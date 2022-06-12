@@ -162,6 +162,40 @@ questions:
                       schema:
                         type: hostpath
                         required: true
+        - variable: downloads
+          label: "Downloads Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Downloads Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-transmission_data"
+                  editable: false
+              - variable: mountPath
+                label: "Downloads Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  editable: true
+                  default: "/downloads"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for Transmission Downloads Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Transmission Downloads Volume"
+                      schema:
+                        type: hostpath
+                        required: true
   - variable: extraAppVolumeMounts
     label: "Extra Host Path Volumes"
     group: "Storage"
